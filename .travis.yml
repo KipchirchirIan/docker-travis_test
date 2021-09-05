@@ -5,7 +5,7 @@ script:
 - docker build -t kipchichirian/node .
 - docker images kipchirchirian/node
 before_deploy:
-- docker login -u kipchirchirian -p $DOCKER_PASS
+- docker login --username kipchirchirian --password-stdin
 deploy:
   provider: script
   script: docker push kipchirchirian/node
