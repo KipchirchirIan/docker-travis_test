@@ -7,7 +7,7 @@ script:
   - docker images kipchirchirian/node
 
 before_deploy:
-  - docker login -u kipchirchirian -p $DOCKER_PASSWORD
+  - docker login -u kipchirchirian -p $DOCKER_PASS
 
 deploy:
   provider: script
