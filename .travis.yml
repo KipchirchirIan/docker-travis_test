@@ -1,16 +1,16 @@
 sudo: required
 services:
-  - docker
-
+- docker
 script:
-  - docker build -t kipchichirian/node .
-  - docker images kipchirchirian/node
-
+- docker build -t kipchichirian/node .
+- docker images kipchirchirian/node
 before_deploy:
-  - docker login -u kipchirchirian -p $DOCKER_PASS
-
+- docker login -u kipchirchirian -p $DOCKER_PASS
 deploy:
   provider: script
   script: docker push kipchirchirian/node
   on:
     branch: main
+env:
+  global:
+    secure: x8wmDr1Sh8WiyLEFwLjv0hbfox0g6TlhHN9CgQof70YweFAn8jX2FKylqMm1ZLeVYGEeBUNEQqCCOPl3CV0DOp3eZaAZzRRAyVIsnc8dHiLkXrxba5eJx9nYOzYGdpQv8wUrGRTl1YuKDzZpB8zBTw1MKGD0jwWO8hsIAe5hp7HrW1BCA/uKP2AesFGaVWrSefOkd+pDPl/pO1EyYVWRwS8xVPQRcdtU6xDy1N04vDhcEOVnlD+0NKiQS1cN0RJYtqTeEbfm8SZs7JUfiVJutG9A/mlkFELazx6ue1oaH/YswaJR9FahWzI6EXtoxOGvOngCTIeJT32uF2ysWr6A9iuYV2e9Z7h4r9V16P4uhqr4EOLeBnuXlxJQ36h4/LgKtj/7kpNQb0pFyj/RjKrSfO64OaPGlTWUEyu8Cv5dZzjeR/QJYT9raReusercK4LoH6lBpciebQ6w6kJxnLllgsW5cxPTOn6eFUj72Qh1wIiUtNlp94I9ti65BX6w/Ll122fwEPds0392ZvaRtZ1gouvYNy6UpmEwEYbDXSW+bC7nawDWawqETI9kpKuANuvB8q45xKy/BsoMJtZexRtA998KDmfWrV+z/0CyEP7E0f+beNiETjfHrSZvKe4QeWnW0ZQTe7FNZCqyKkOBPHl50576cfNQLGJigqHxnsKg1og=
