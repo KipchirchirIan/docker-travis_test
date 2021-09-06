@@ -8,6 +8,7 @@ before_deploy:
   - echo "$DOCKER_PASS" | docker login --username kipchirchirian --password-stdin
 deploy:
   provider: script
+  skip_cleanup: true
   script: docker push kipchirchirian/node
   on:
     branch: main
