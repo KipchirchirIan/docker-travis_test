@@ -3,12 +3,12 @@ services:
 - docker
 script:
 - docker build -t kipchichirian/node .
-- docker images kipchirchirian/node
+- docker images kipchirchirian/node:latest
 before_deploy:
   - echo "$DOCKER_PASS" | docker login --username kipchirchirian --password-stdin
 deploy:
   provider: script
   skip_cleanup: true
-  script: docker push kipchirchirian/node
+  script: docker push kipchirchirian/node:latest
   on:
     branch: main
