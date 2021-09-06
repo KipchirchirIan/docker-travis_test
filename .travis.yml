@@ -2,7 +2,7 @@ sudo: required
 services:
 - docker
 script:
-- docker build -t kipchichirian/node .
+- docker build -t kipchichirian/node:latest .
 - docker images kipchirchirian/node:latest
 before_deploy:
   - echo "$DOCKER_PASS" | docker login --username kipchirchirian --password-stdin
